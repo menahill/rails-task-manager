@@ -1,11 +1,16 @@
-<h2><%=@task.title%></h2>
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center p-3 bg-light text-dark">
+    <h2><%=@task.title.capitalize %></h2>
+  </div>
+  <p class = "p-3 mb-2 bg-light text-dark"><%= @task.details.capitalize %></p>
 
-<p><%= @task.details %></p>
-<p><%= @task.completed %></p>
-<br>
-
-
-<br><br>
-<%= link_to "✏️ Edit Task", edit_task_path %>
-<br><br>
-<%= link_to "↩︎Back to List", tasks_path %>
+  <% if @task.completed %>
+      <div class = "p-3 mb-2 bg-success text-white">This task is completed</div>
+  <% else %>
+      <div class = "p-3 mb-2 bg-warning text-dark">This task is not completed yet</div>
+  <% end %>
+  <br><br>
+  <%= link_to "✏️ Edit Task", edit_task_path  %>
+  <br><br>
+  <%= link_to "↩︎Back to List", tasks_path %>
+</div>

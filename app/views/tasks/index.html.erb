@@ -1,16 +1,18 @@
-<h1>My Tasks 📝</h1>
+<div class="m-4">
+  <h1>My Tasks 📝</h1>
 
 
-<ul class="list-group list-group-light">
-  <% @tasks.each do |item| %>
+  <ul class="list-group list-group-light">
+    <% @tasks.each do |item| %>
 
-    <li class="list-group-item">
-      <%# <input class="form-check-input me-1" type="checkbox"  <%= item.completed ? "checked" : "unchecked"  %>
-      <input class="form-check-input" type="checkbox" value="<% item.completed %>" id="">
-      <label class="form-check-label" for="flexCheckDefault">
-      <%= link_to item.title, task_path(item)%>   <%= link_to "🗑️", task_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
-  <% end %>
-</ul>
-<br>
+      <li class="list-group-item">
+        <%# <input class="form-check-input me-1" type="checkbox"  <%= item.completed ? "checked" : "unchecked"  %>
+        <input class="form-check-input" type="checkbox" value="<% item.completed %>" id="">
+        <label class="form-check-label" for="flexCheckDefault">
+        <%= link_to item.title, task_path(item)%>   <%= link_to "🗑️", task_path(item), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></li>
+    <% end %>
+  </ul>
+  <br>
 
-<%= link_to "➕ Add New Task", new_task_path %>
+  <%= link_to "➕ Add New Task", new_task_path %>
+</div>
