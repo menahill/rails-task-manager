@@ -1,0 +1,14 @@
+<div class="container center_div">
+
+<%= simple_form_for task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+<br><br>
+  <%# <%= f.label :completed %>
+  <%= f.input :completed, as: :boolean, checked_value: true, unchecked_value: false  %>
+  <br>
+  <%= f.submit %>
+<% end %>
+</div>
