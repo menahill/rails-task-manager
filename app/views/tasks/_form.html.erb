@@ -1,14 +1,15 @@
-<%# <div class="container center_div"> %>
 
 <%= simple_form_for task do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-<br><br>
-  <%# <%= f.label :completed %>
-  <%= f.input :completed, as: :boolean, checked_value: true, unchecked_value: false  %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title,  class: 'form-control'%>
+  </div>
   <br>
-  <%= f.submit %>
+  <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_area :details, class: 'form-control' %>
+  </div>
+  <br>
+  <%= f.input :completed, as: :boolean, checked_value: true, unchecked_value: false  %>
+  <%= f.submit class: 'btn btn-primary mt-3' %>
 <% end %>
-<%# </div> %>
